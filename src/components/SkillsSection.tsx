@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Server, Database, Code, Globe, FileCode, Terminal } from 'lucide-react';
+import { Server, Database, Shield, Globe, FileCode, Terminal, Network, Monitor, Laptop, HardDrive } from 'lucide-react';
 
 const SkillCard = ({ title, skills, icon: Icon }) => {
   return (
@@ -17,21 +17,14 @@ const SkillCard = ({ title, skills, icon: Icon }) => {
           <Icon className="text-portfolio-purple" size={24} />
         </div>
         <h3 className="text-xl font-semibold mb-5">{title}</h3>
-        <div className="space-y-3">
+        <div className="grid grid-cols-2 gap-3">
           {skills.map((skill, index) => (
-            <div key={index}>
-              <div className="flex justify-between mb-1">
-                <span className="text-sm font-medium text-gray-700">{skill.name}</span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1 }}
-                  className="h-2 rounded-full bg-portfolio-purple"
-                ></motion.div>
-              </div>
+            <div 
+              key={index} 
+              className="flex items-center space-x-2 bg-gray-50 p-3 rounded-lg"
+            >
+              <div className="w-2 h-2 rounded-full bg-portfolio-purple"></div>
+              <span className="text-sm font-medium text-gray-700">{skill}</span>
             </div>
           ))}
         </div>
@@ -43,24 +36,54 @@ const SkillCard = ({ title, skills, icon: Icon }) => {
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: "Développement",
-      icon: Code,
+      title: "Administration Système",
+      icon: Server,
       skills: [
-        { name: "HTML / CSS", level: 90 },
-        { name: "PHP", level: 85 },
-        { name: "Lua", level: 70 },
-        { name: "Python", level: 75 },
-        { name: "SQL", level: 80 }
+        "Windows Server",
+        "Active Directory",
+        "Exchange Server",
+        "PowerShell",
+        "Linux",
+        "VMware"
       ]
     },
     {
-      title: "Réseau",
-      icon: Globe,
+      title: "Réseaux & Sécurité",
+      icon: Shield,
       skills: [
-        { name: "Proxy (squidGuard)", level: 75 },
-        { name: "Pare-feu (Pfsense)", level: 80 },
-        { name: "Active Directory", level: 85 },
-        { name: "Windows Server", level: 80 }
+        "Pare-feu (Pfsense)",
+        "Proxy (squidGuard)",
+        "VPN",
+        "TCP/IP",
+        "Routage",
+        "Audit Sécurité"
+      ]
+    }
+  ];
+
+  const additionalSkills = [
+    {
+      title: "Infrastructure",
+      icon: Network,
+      skills: [
+        "Virtualisation",
+        "Cloud (Azure, AWS)",
+        "Stockage SAN/NAS",
+        "Sauvegarde",
+        "Haute disponibilité",
+        "Clustering"
+      ]
+    },
+    {
+      title: "Support & Maintenance",
+      icon: Monitor,
+      skills: [
+        "Dépannage matériel",
+        "Monitoring (Nagios)",
+        "Scripting",
+        "Gestion des incidents",
+        "Documentation",
+        "ITIL"
       ]
     }
   ];
@@ -78,15 +101,26 @@ const SkillsSection = () => {
           <span className="inline-block px-3 py-1 bg-portfolio-purple/10 text-portfolio-purple rounded-full text-sm font-medium mb-3">
             Expertise
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Compétences Informatiques</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Compétences Techniques</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Mon parcours académique et mes expériences m'ont permis de développer diverses 
-            compétences techniques.
+            compétences en administration système et infrastructure IT.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {skillCategories.map((category, index) => (
+            <SkillCard
+              key={index}
+              title={category.title}
+              skills={category.skills}
+              icon={category.icon}
+            />
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {additionalSkills.map((category, index) => (
             <SkillCard
               key={index}
               title={category.title}
@@ -105,43 +139,51 @@ const SkillsSection = () => {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-portfolio-purple/5 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
           
-          <h3 className="text-2xl font-semibold mb-6 relative z-10">Autres compétences techniques</h3>
+          <h3 className="text-2xl font-semibold mb-6 relative z-10">Certifications & Outils</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
             <div>
               <h4 className="text-lg font-medium mb-4 flex items-center">
-                <Terminal className="mr-2 text-portfolio-purple" size={20} />
-                Administration Système
+                <HardDrive className="mr-2 text-portfolio-purple" size={20} />
+                Outils Maîtrisés
               </h4>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-center">
                   <div className="w-2 h-2 rounded-full bg-portfolio-purple mr-2"></div>
-                  Configuration de serveurs Windows
+                  Microsoft System Center
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 rounded-full bg-portfolio-purple mr-2"></div>
-                  Gestion des permissions et utilisateurs
+                  VMware vSphere
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 rounded-full bg-portfolio-purple mr-2"></div>
-                  Maintenance et dépannage
+                  Microsoft 365 Admin
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 rounded-full bg-portfolio-purple mr-2"></div>
+                  PfSense
                 </li>
               </ul>
             </div>
             
             <div>
               <h4 className="text-lg font-medium mb-4 flex items-center">
-                <Database className="mr-2 text-portfolio-purple" size={20} />
-                Gestion de Bases de Données
+                <Terminal className="mr-2 text-portfolio-purple" size={20} />
+                Compétences Techniques
               </h4>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-center">
                   <div className="w-2 h-2 rounded-full bg-portfolio-purple mr-2"></div>
-                  Conception de schémas
+                  Scripting (PowerShell, Bash)
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 rounded-full bg-portfolio-purple mr-2"></div>
-                  Requêtes SQL complexes
+                  Gestion des utilisateurs
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 rounded-full bg-portfolio-purple mr-2"></div>
+                  Configuration de serveurs
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 rounded-full bg-portfolio-purple mr-2"></div>

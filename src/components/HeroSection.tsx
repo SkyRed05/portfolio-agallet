@@ -27,7 +27,7 @@ const HeroSection = () => {
               transition={{ delay: 0.2, duration: 0.7 }}
             >
               <h2 className="text-2xl md:text-3xl font-medium text-gray-700 mb-6">
-                Développeur Web & Informatique
+                Administrateur Système
               </h2>
             </motion.div>
             
@@ -38,7 +38,7 @@ const HeroSection = () => {
               className="text-lg text-gray-600 max-w-lg mb-8"
             >
               Étudiant en BTS Service Informatiques aux Organisations
-              passionné par le développement web et la programmation.
+              passionné par l'administration système et les infrastructures informatiques.
             </motion.p>
             
             <motion.div
@@ -73,7 +73,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-portfolio-purple/20 rounded-full filter blur-xl animate-float"></div>
             <div className="absolute inset-2 bg-white rounded-full overflow-hidden shadow-xl">
               <img
-                src="/lovable-uploads/d79ccb89-9367-4e9f-9a5d-c23d45861445.png"
+                src="/lovable-uploads/cde4b5aa-12c6-417d-83f7-bf936506b55e.png"
                 alt="Antonin Gallet"
                 className="w-full h-full object-cover"
               />
