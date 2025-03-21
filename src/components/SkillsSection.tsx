@@ -41,10 +41,9 @@ const SkillsSection = () => {
       skills: [
         "Windows Server",
         "Active Directory",
-        "Exchange Server",
         "PowerShell",
         "Linux",
-        "VMware"
+        "Virtual Box"
       ]
     },
     {
@@ -56,7 +55,7 @@ const SkillsSection = () => {
         "VPN",
         "TCP/IP",
         "Routage",
-        "Audit Sécurité"
+        "BGP"
       ]
     }
   ];
@@ -67,23 +66,7 @@ const SkillsSection = () => {
       icon: Network,
       skills: [
         "Virtualisation",
-        "Cloud (Azure, AWS)",
-        "Stockage SAN/NAS",
-        "Sauvegarde",
-        "Haute disponibilité",
-        "Clustering"
-      ]
-    },
-    {
-      title: "Support & Maintenance",
-      icon: Monitor,
-      skills: [
-        "Dépannage matériel",
-        "Monitoring (Nagios)",
-        "Scripting",
-        "Gestion des incidents",
-        "Documentation",
-        "ITIL"
+        "Stockage SAN/NAS"
       ]
     }
   ];
