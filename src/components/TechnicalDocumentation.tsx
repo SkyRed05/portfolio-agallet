@@ -33,8 +33,8 @@ const DocumentationCard = ({ title, description, imageSrc, icon: Icon }) => {
 const TechnicalDocumentation = () => {
   const documentationItems = [
     {
-      title: "Architecture Système",
-      description: "Schéma d'architecture pour un système de gestion d'emails avec authentification et validation des tokens, illustrant ma capacité à concevoir des infrastructures complexes.",
+      title: "Flux Power Automate",
+      description: "Automatisation pour découper un email afin de récupérer les données voulues et les envoyer dans un canal Teams dédié, démontrant mes compétences en automatisation de processus.",
       imageSrc: "/lovable-uploads/57862e43-6ea4-47bc-a222-8269cfa47b9e.png",
       icon: Database
     },
